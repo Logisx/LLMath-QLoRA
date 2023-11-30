@@ -90,3 +90,6 @@ target/
 
 # Virtual environments
 .venv
+
+# Log files
+logs
