@@ -3,7 +3,7 @@ from pathlib import Path
 from src.utils.common import read_yaml
 from dotenv import find_dotenv, load_dotenv
 from src.data.entity import (DataIngestionConfig,
-)
+                            DataPreprocessingConfig)
 
 _ = load_dotenv(find_dotenv()) # read local .env file
 
@@ -29,3 +29,16 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config
+    
+    def get_data_preprocessing_config(self) -> DataPreprocessingConfig:
+        config = self.config.data_preprocessing
+
+
+        data_preprocessing_config = DataPreprocessingConfig(
+            root_dir=config.root_dir,
+            raw_data_path=config.raw_data_path,
+            question_key=config.question_key,
+            answer_key=config.answer_key
+        )
+
+        return data_preprocessing_config

@@ -8,3 +8,10 @@ class DataIngestionConfig:
     hf_dataset_split: str
     local_data_file: Path
     unzip_dir: Path   
+
+@dataclass(frozen=True)
+class DataPreprocessingConfig:
+    root_dir: Path
+    raw_data_path: Path
+    question_key: str
+    answer_key: str
