@@ -9,7 +9,7 @@ __version__ = "0.0.0"
 REPO_NAME = "LLM-Instruction-tuning-School-math-questions"
 AUTHOR_USER_NAME = "Logisx"
 SRC_REPO = "src"
-AUTHOR_EMAIL = "entbappy73@gmail.com"
+AUTHOR_EMAIL = "logis1936@gmail.com"
 
 
 
