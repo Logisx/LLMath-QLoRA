@@ -15,3 +15,11 @@ class DataPreprocessingConfig:
     raw_data_path: Path
     question_key: str
     answer_key: str
+
+@dataclass(frozen=True)
+class DataTransformationConfig:
+    root_dir: Path
+    finetuning_data_path: Path
+    train_data_split: float
+    test_data_split: float
+    eval_data_split: float

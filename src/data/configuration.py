@@ -3,7 +3,8 @@ from pathlib import Path
 from src.utils.common import read_yaml
 from dotenv import find_dotenv, load_dotenv
 from src.data.entity import (DataIngestionConfig,
-                            DataPreprocessingConfig)
+                            DataPreprocessingConfig,
+                            DataTransformationConfig)
 
 _ = load_dotenv(find_dotenv()) # read local .env file
 
@@ -30,9 +31,9 @@ class ConfigurationManager:
 
         return data_ingestion_config
     
+
     def get_data_preprocessing_config(self) -> DataPreprocessingConfig:
         config = self.config.data_preprocessing
-
 
         data_preprocessing_config = DataPreprocessingConfig(
             root_dir=config.root_dir,
@@ -42,3 +43,17 @@ class ConfigurationManager:
         )
 
         return data_preprocessing_config
+    
+
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config.data_transformation
+
+        data_transformation_config = DataTransformationConfig(
+            root_dir=config.root_dir,
+            finetuning_data_path=config.finetuning_data_path,
+            train_data_split=config.train_data_split,
+            test_data_split=config.test_data_split,
+            eval_data_split=config.eval_data_split
+        )
+
+        return data_transformation_config

@@ -5,6 +5,7 @@ from src.logging import logger
 
 from src.data.pipeline.stage_01_data_ingestion import DataIngestionPipeline
 from src.data.pipeline.stage_02_data_preprocessing import DataPreprocessingPipeline
+from src.data.pipeline.stage_03_data_transformation import DataTransformationPipeline
 
 
 def main():
@@ -31,6 +32,19 @@ def main():
         data_preprocessing_pipeline.main()
 
         logger.info('>>>>> Data Preprocessing completed <<<<<')
+        
+    except Exception as e:
+        logger.exception(e)
+        raise e
+    
+
+    try:
+        logger.info('>>>>> Data Transformation started <<<<<')
+
+        data_transformation_pipeline = DataTransformationPipeline()
+        data_transformation_pipeline.main()
+
+        logger.info('>>>>> Data Transformation completed <<<<<')
         
     except Exception as e:
         logger.exception(e)
