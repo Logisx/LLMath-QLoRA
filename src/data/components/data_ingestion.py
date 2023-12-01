@@ -18,10 +18,10 @@ class DataIngestion:
             df = pd.DataFrame(raw_dataset)  
             
             with zipfile.ZipFile(self.config.local_data_file, 'w') as z:
-                df.to_csv('dataset.csv', index=False)  # Save DataFrame to CSV file
-                z.write('dataset.csv')  # Write CSV file to the zip archive
+                df.to_csv('raw_dataset.csv', index=False)  # Save DataFrame to CSV file
+                z.write('raw_dataset.csv')  # Write CSV file to the zip archive
             
-            os.remove('dataset.csv')  # Remove the temporary CSV file after zipping
+            os.remove('raw_dataset.csv')  # Remove the temporary CSV file after zipping
             logger.info(f"Dataset {self.config.hf_dataset_name} downloaded and archived as data.zip!")
         else:
             logger.info(f"File already exists. File size: {Path(self.config.local_data_file).stat().st_size}") 

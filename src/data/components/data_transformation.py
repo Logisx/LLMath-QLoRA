@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import datasets
 from src.logging import logger
 from datasets import Dataset, DatasetDict
 from src.data.entity import DataTransformationConfig
