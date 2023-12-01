@@ -1,0 +1,24 @@
+data_ingestion:
+  root_dir: data/raw
+  hf_dataset_name: qwedsacf/grade-school-math-instructions
+  hf_dataset_split: train
+  local_data_file: data/raw/data.zip
+  unzip_dir: data/raw
+
+data_preprocessing:
+  root_dir: data/interim
+  raw_data_path: data/raw/raw_dataset.csv
+  question_key: INSTRUCTION
+  answer_key: RESPONSE
+
+data_transformation:
+  root_dir: data/processed
+  finetuning_data_path: data/interim/finetuning_dataset.csv
+  train_data_split: 0.9
+  test_data_split: 0.05
+  eval_data_split: 0.05
+
+data_validation:
+  root_dir: data/processed
+  STATUS_FILE: data/processed/status.txt
+  ALL_REQUIRED_FILES: ["train_dataset.csv", "test_dataset.csv", "eval_dataset.csv"]
