@@ -1,5 +1,0 @@
-data_ingestion:
-  root_dir: data/raw
-  hf_dataset_name: /qwedsacf/grade-school-math-instructions
-  local_data_file: data/raw/data.zip
-  unzip_dir: data/raw

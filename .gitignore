@@ -93,3 +93,9 @@ target/
 
 # Log files
 logs
+
+# Legacy notebooks
+notebooks/legacy
+
+# Models files
+/models

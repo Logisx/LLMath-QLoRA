@@ -1,0 +1,13 @@
+model_trainer:
+  root_dir: models
+  data_path: data/processed
+  base_model: openlm-research/open_llama_3b_v2
+  training_name: 01_QLoRA
+  upload_from_hf: True
+  hf_model_name: Logisx/open_llama_3b_v2-Fine-Tuned-Grade_School_Math_Instructions
+
+
+model_prediction:
+  data_path: data/processed
+  base_model: openlm-research/open_llama_3b_v2
+  adapters_path: models/01_QLoRA

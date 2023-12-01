@@ -1,0 +1,32 @@
+lora_parameters:
+  r: 16
+  target_modules: ["q_proj", "v_proj"]
+  lora_alpha: 8.0
+  lora_dropout: 0.05
+  bias: none
+  task_type: CAUSAL_LM
+
+bits_and_bytes_parameters:
+  load_in_4bit: true
+  bnb_4bit_quant_type: nf4
+  bnb_4bit_use_double_quant: True
+
+training_arguments:
+  output_dir: outputs
+  evaluation_strategy: epoch
+  save_strategy: epoch
+  num_train_epochs: 1.0
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4
+  optim: adamw_hf
+  learning_rate: 1e-5
+  fp16: True
+  max_grad_norm: 0.3
+  warmup_ratio: 0.03
+  group_by_length: True
+  lr_scheduler_type: linear
+
+prediction_parameters:
+  length_penalty: 0.8
+  num_beams: 8
+  max_length: 128
