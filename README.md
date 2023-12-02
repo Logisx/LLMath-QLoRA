@@ -11,7 +11,7 @@
 - [:world\_map: Roadmap](#world_map-roadmap)
 - [⚖️ License](#️-license)
 - [🔗 Links](#-links)
-- [:page\_with\_curl: References \& Citations](#page_with_curl-references--citations)
+- [📚 References \& Citations](#-references--citations)
 # :rocket: LLM Instruction tuning for school math questions
 
 End-to-end MLOps project for LLM instruction finetuning based on PEFT & QLoRA to optimize the training.
@@ -46,7 +46,7 @@ End-to-end MLOps project for LLM instruction finetuning based on PEFT & QLoRA to
 - **Version Control**: Git, DVC, GitHub
 
 ## :file_folder: Project structure
-Project structure template can be found [here](https://drivendata.github.io/cookiecutter-data-science/)
+Project structure template can be found [here](https://drivendata.github.io/cookiecutter-data-science/).
 ```
 ├── LICENSE
 ├── Makefile                  <- Makefile with commands like `make data` or `make train`
@@ -149,13 +149,13 @@ Project structure template can be found [here](https://drivendata.github.io/cook
 
 # ⚖️ License
 
-[MIT](https://github.com/Logisx/DeepEssay/blob/main/LICENSE)
+[MIT](https://github.com/Logisx/LLMath-QLoRA/blob/main/LICENSE)
 
 
 # 🔗 Links
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aleksandrshishkov)
 
-# :page_with_curl: References & Citations
+# 📚 References & Citations
 
 - [Efficient Fine-Tuning with LoRA: A Guide to Optimal Parameter Selection for Large Language Models](https://www.databricks.com/blog/efficient-fine-tuning-lora-guide-llms)
 - [Grade School Math Instructions Fine-Tune OPT](https://github.com/DunnBC22/NLP_Projects/blob/main/OPT%20Models/Grade%20School%20Math%20Instructions%20Fine-Tune%20OPT.ipynb)
