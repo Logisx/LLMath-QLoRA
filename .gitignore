@@ -76,7 +76,13 @@ target/
 .ipynb_checkpoints/
 
 # exclude data from source control by default
-/data/
+data/raw/data.zip
+data/raw/raw_dataset.csv
+data/interim/finetuning_dataset.csv
+data/processed/train_dataset.csv
+data/processed/eval_dataset.csv
+data/processed/test_dataset.csv
+
 
 # Mac OS-specific storage files
 .DS_Store
@@ -98,7 +104,7 @@ logs
 notebooks/legacy
 
 # Models files
-/models
+/models/01_QLoRA
 
 # Assets extra files
 /assets/logo-assets
