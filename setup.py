@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 __version__ = "0.0.0"
 
-REPO_NAME = "LLM-Instruction-tuning-School-math-questions"
+REPO_NAME = "LLMath-QLoRA"
 AUTHOR_USER_NAME = "Logisx"
 SRC_REPO = "src"
 AUTHOR_EMAIL = "logis1936@gmail.com"

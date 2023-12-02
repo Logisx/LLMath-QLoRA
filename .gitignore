@@ -99,3 +99,6 @@ notebooks/legacy
 
 # Models files
 /models
+
+# Assets extra files
+/assets/logo-assets
