@@ -1,0 +1,70 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/data/pipeline/stage_01_data_ingestion.py
+    deps:
+    - path: config/data-config.yaml
+      hash: md5
+      md5: 309c067c1f09ce1f321cd603627d2fef
+      size: 693
+    - path: src/data/pipeline/stage_01_data_ingestion.py
+      hash: md5
+      md5: f919386f48cedf2bca18cde319f3348b
+      size: 861
+    outs:
+    - path: data/raw/data.zip
+      hash: md5
+      md5: df3398e71a59ca330edcc73f16fb79ee
+      size: 4767505
+    - path: data/raw/raw_dataset.csv
+      hash: md5
+      md5: 15c8a997a880cdf21788d6768a9ccce9
+      size: 4767377
+  data_preprocessing:
+    cmd: python src/data/pipeline/stage_02_data_preprocessing.py
+    deps:
+    - path: config/data-config.yaml
+      hash: md5
+      md5: 309c067c1f09ce1f321cd603627d2fef
+      size: 693
+    - path: data/raw/raw_dataset.csv
+      hash: md5
+      md5: 15c8a997a880cdf21788d6768a9ccce9
+      size: 4767377
+    - path: src/data/pipeline/stage_02_data_preprocessing.py
+      hash: md5
+      md5: 70ec7768c6f63b83681cb8ffeda969e9
+      size: 886
+    outs:
+    - path: data/interim/finetuning_dataset.csv
+      hash: md5
+      md5: dfd3a13874ed241ee3cf409ce589dfbe
+      size: 10776969
+  data_transformation:
+    cmd: python src/data/pipeline/stage_03_data_transformation.py
+    deps:
+    - path: config/data-config.yaml
+      hash: md5
+      md5: 309c067c1f09ce1f321cd603627d2fef
+      size: 693
+    - path: data/interim/finetuning_dataset.csv
+      hash: md5
+      md5: dfd3a13874ed241ee3cf409ce589dfbe
+      size: 10776969
+    - path: src/data/pipeline/stage_03_data_transformation.py
+      hash: md5
+      md5: 901b7eee8e8f1a97e324c9eeb84744b9
+      size: 890
+    outs:
+    - path: data/processed/eval_dataset.csv
+      hash: md5
+      md5: 31b738814ea85ec44dc5aae53d2bd448
+      size: 1009363
+    - path: data/processed/test_dataset.csv
+      hash: md5
+      md5: b2dd2934de988000e72527f97d515420
+      size: 52051
+    - path: data/processed/train_dataset.csv
+      hash: md5
+      md5: ae5c25677b44ecc23c4714c6f81fcbf7
+      size: 9715609

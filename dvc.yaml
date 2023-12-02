@@ -1,0 +1,41 @@
+stages:
+  data_ingestion:
+    cmd: python src/data/pipeline/stage_01_data_ingestion.py
+    deps:
+      - src/data/pipeline/stage_01_data_ingestion.py
+      - config/data-config.yaml
+    outs:
+      - data/raw/data.zip
+      - data/raw/raw_dataset.csv
+
+
+  data_preprocessing:
+    cmd: python src/data/pipeline/stage_02_data_preprocessing.py
+    deps:
+      - src/data/pipeline/stage_02_data_preprocessing.py
+      - config/data-config.yaml
+      - data/raw/raw_dataset.csv
+    outs:
+      - data/interim/finetuning_dataset.csv
+
+  data_transformation:
+    cmd: python src/data/pipeline/stage_03_data_transformation.py
+    deps:
+      - src/data/pipeline/stage_03_data_transformation.py
+      - config/data-config.yaml
+      - data/interim/finetuning_dataset.csv
+    outs:
+      - data/processed/train_dataset.csv
+      - data/processed/eval_dataset.csv
+      - data/processed/test_dataset.csv
+
+  model_training:
+    cmd: python src/models/pipeline/stage_01_model_training.py
+    deps:
+      - src/models/pipeline/stage_01_model_training.py
+      - config/model-config.yaml
+      - config/model-parameters.yaml
+      - data/processed/train_dataset.csv
+      - data/processed/eval_dataset.csv
+    outs:
+      - models/
