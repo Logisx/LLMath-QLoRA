@@ -4,8 +4,7 @@
 
 - [:page\_facing\_up: Table of Contents](#page_facing_up-table-of-contents)
 - [:rocket: LLM Instruction tuning for school math questions](#rocket-llm-instruction-tuning-for-school-math-questions)
-  - [:star: Features](#star-features)
-  - [:bar\_chart: Model choice](#bar_chart-model-choice)
+  - [:bar\_chart: Model \& Dataset](#bar_chart-model--dataset)
   - [:toolbox: Tech Stack](#toolbox-tech-stack)
   - [:file\_folder: Project structure](#file_folder-project-structure)
   - [:computer: Run Locally](#computer-run-locally)
@@ -18,6 +17,8 @@
 End-to-end MLOps project for LLM instruction finetuning based on PEFT & QLoRA to optimize the training.
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.1.1-purple)
+![JupyterLab](https://img.shields.io/badge/Jupyter%20Lab-Research-orange)
 ![Transformers](https://img.shields.io/badge/Transformers-NLP-amber)
 ![Docker](https://img.shields.io/badge/Docker-Container-blue)
 ![DVC](https://img.shields.io/badge/DVC-Version%20Control-ee4d5f)
@@ -31,23 +32,17 @@ End-to-end MLOps project for LLM instruction finetuning based on PEFT & QLoRA to
 ![Demo](https://github.com/Logisx/IELTS-Grading/blob/main/assets/Demo.gif?raw=true)
 
 
-## :star: Features
-- **Submit Essays**: Users can submit their IELTS essays directly through the web application. The process is user-friendly and straightforward.
-
-
-## :bar_chart: Model choice
-**Detailed training overview with EDA and Feature engineering** can be found in the [notebook](https://github.com/Logisx/IELTS-Grading/blob/main/IELTS_Grading_with_BERT.ipynb).\
-**Dataset**: [IELTS Writing Scored Essays Dataset
-](https://www.kaggle.com/datasets/mazlumi/ielts-writing-scored-essays-dataset)
+## :bar_chart: Model & Dataset
+**Base LLM**: [OpenLLaMA](https://huggingface.co/openlm-research/open_llama_3b_v2)\
+**Dataset**: [Grade School Math Instructions Dataset](https://huggingface.co/datasets/qwedsacf/grade-school-math-instructions)
 
 
 ## :toolbox: Tech Stack
 
-- **Framework**: Flask
-- **NLP**: TensorFlow, BERT, Hugging Face Transformers, Sklearn
-- **Deployment**: Docker, Microsoft Azure
-- **Frontend**: HTML, CSS, JavaScript
-- **Version Control**: Git, GitHub
+- **NLP**: PyTorch, Jupyter Lab, Hugging Face Transformers, Accelerate, PEFT
+- **Framework**: FastApi
+- **Deployment**: Docker, Amazon Web Services (AWS), GitHub Actions
+- **Version Control**: Git, DVC, GitHub
 - **Testing**: REST client
 
 ## :file_folder: Project structure
