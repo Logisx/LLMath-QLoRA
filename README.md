@@ -11,14 +11,14 @@
 - [:world\_map: Roadmap](#world_map-roadmap)
 - [⚖️ License](#️-license)
 - [🔗 Links](#-links)
-- [References \& Citations](#references--citations)
+- [:page\_with\_curl: References \& Citations](#page_with_curl-references--citations)
 # :rocket: LLM Instruction tuning for school math questions
 
 End-to-end MLOps project for LLM instruction finetuning based on PEFT & QLoRA to optimize the training.
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.1.1-purple)
-![JupyterLab](https://img.shields.io/badge/Jupyter%20Lab-Research-orange)
+![JupyterLab](https://img.shields.io/badge/Jupyter%20Lab-Research-FF9900)
 ![Transformers](https://img.shields.io/badge/Transformers-NLP-amber)
 ![Docker](https://img.shields.io/badge/Docker-Container-blue)
 ![DVC](https://img.shields.io/badge/DVC-Version%20Control-ee4d5f)
@@ -29,7 +29,7 @@ End-to-end MLOps project for LLM instruction finetuning based on PEFT & QLoRA to
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) 
 
 
-![Demo](https://github.com/Logisx/IELTS-Grading/blob/main/assets/Demo.gif?raw=true)
+![Demo](https://github.com/Logisx/LLMath-QLoRA/blob/main/assets/demo.jpg?raw=true)
 
 
 ## :bar_chart: Model & Dataset
@@ -39,11 +39,11 @@ End-to-end MLOps project for LLM instruction finetuning based on PEFT & QLoRA to
 
 ## :toolbox: Tech Stack
 
-- **NLP**: PyTorch, Jupyter Lab, Hugging Face Transformers, Accelerate, PEFT
-- **Framework**: FastApi
+- **NLP**: PyTorch,  Hugging Face Transformers, Accelerate, PEFT
+- **Research**: Jupyter Lab, MLflow
+- **Framework**: FastAPI
 - **Deployment**: Docker, Amazon Web Services (AWS), GitHub Actions
 - **Version Control**: Git, DVC, GitHub
-- **Testing**: REST client
 
 ## :file_folder: Project structure
 Project structure template can be found [here](https://drivendata.github.io/cookiecutter-data-science/)
@@ -142,9 +142,9 @@ Project structure template can be found [here](https://drivendata.github.io/cook
 
 # :world_map: Roadmap
 
-1. **Testing features**: Develop unit tests and integrations test.
-2. **Data collection**: Aggregate more data to improve accuracy.
-3. **Educational insights feature**: Along with the score, the application will offer insights and suggestions for improvement, making it a valuable educational tool for those looking to enhance their writing skills.
+1. **Testing features**: Develop unit tests and integrations test
+2. **Hyperparameter tuning**: Train a better model by hyperparameter tuning
+3. **User interface**: Create a frienly app interface
 
 
 # ⚖️ License
@@ -155,4 +155,44 @@ Project structure template can be found [here](https://drivendata.github.io/cook
 # 🔗 Links
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aleksandrshishkov)
 
-# References & Citations
+# :page_with_curl: References & Citations
+
+- [Efficient Fine-Tuning with LoRA: A Guide to Optimal Parameter Selection for Large Language Models](https://www.databricks.com/blog/efficient-fine-tuning-lora-guide-llms)
+- [Grade School Math Instructions Fine-Tune OPT](https://github.com/DunnBC22/NLP_Projects/blob/main/OPT%20Models/Grade%20School%20Math%20Instructions%20Fine-Tune%20OPT.ipynb)
+```
+@article{cobbe2021gsm8k,
+  title={Training Verifiers to Solve Math Word Problems},
+  author={Cobbe, Karl and Kosaraju, Vineet and Bavarian, Mohammad and Chen, Mark and Jun, Heewoo and Kaiser, Lukasz and Plappert, Matthias and Tworek, Jerry and Hilton, Jacob and Nakano, Reiichiro and Hesse, Christopher and Schulman, John},
+  journal={arXiv preprint arXiv:2110.14168},
+  year={2021}
+}
+```
+
+```
+@software{openlm2023openllama,
+  author = {Geng, Xinyang and Liu, Hao},
+  title = {OpenLLaMA: An Open Reproduction of LLaMA},
+  month = May,
+  year = 2023,
+  url = {https://github.com/openlm-research/open_llama}
+}
+```
+
+```
+@software{together2023redpajama,
+  author = {Together Computer},
+  title = {RedPajama-Data: An Open Source Recipe to Reproduce LLaMA training dataset},
+  month = April,
+  year = 2023,
+  url = {https://github.com/togethercomputer/RedPajama-Data}
+}
+```
+
+```
+@article{touvron2023llama,
+  title={Llama: Open and efficient foundation language models},
+  author={Touvron, Hugo and Lavril, Thibaut and Izacard, Gautier and Martinet, Xavier and Lachaux, Marie-Anne and Lacroix, Timoth{\'e}e and Rozi{\`e}re, Baptiste and Goyal, Naman and Hambro, Eric and Azhar, Faisal and others},
+  journal={arXiv preprint arXiv:2302.13971},
+  year={2023}
+}
+```
