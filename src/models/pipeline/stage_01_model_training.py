@@ -13,3 +13,17 @@ class ModelTrainingPipeline:
         training_args = config.get_training_args()
         model_trainer = ModelTrainer(model_trainer_config=model_trainer_config, lora_parameters=lora_parameters, bits_and_bytes_parameters=bits_and_bytes_parameters, training_arguments=training_args)
         model_trainer.train()
+
+
+if __name__ == "__main__":
+    try:
+        logger.info('>>>>> Model Training started <<<<<')
+
+        model_training_pipeline = ModelTrainingPipeline()
+        model_training_pipeline.main()
+
+        logger.info('>>>>> Model Training completed <<<<<')
+        
+    except Exception as e:
+        logger.exception(e)
+        raise e
