@@ -1,54 +1,41 @@
 stages:
   data_ingestion:
-    cmd: python src/
+    cmd: python src/data/pipeline/stage_01_data_ingestion.py
     deps:
-      - src/cnnClassifier/pipeline/stage_01_data_ingestion.py
-      - config/config.yaml
+      - src/data/pipeline/stage_01_data_ingestion.py
+      - config/data-config.yaml
     outs:
-      - artifacts/data_ingestion/kidney-ct-scan-image
+      - data/raw/data.zip
+      - data/raw/raw_dataset.csv
 
 
   data_preprocessing:
-    cmd: python src/cnnClassifier/pipeline/stage_02_prepare_base_model.py
+    cmd: python src/data/pipeline/stage_02_data_preprocessing.py
     deps:
-      - src/cnnClassifier/pipeline/stage_02_prepare_base_model.py
-      - config/config.yaml
-    params:
-      - IMAGE_SIZE
-      - INCLUDE_TOP
-      - CLASSES
-      - WEIGHTS
-      - LEARNING_RATE
+      - src/data/pipeline/stage_02_data_preprocessing.py
+      - config/data-config.yaml
+      - data/raw/raw_dataset.csv
     outs:
-      - artifacts/prepare_base_model
-
+      - data/interim/finetuning_dataset.csv
 
   data_transformation:
-    cmd: python src/cnnClassifier/pipeline/stage_03_model_training.py
+    cmd: python src/data/pipeline/stage_03_data_transformation.py
     deps:
-      - src/cnnClassifier/pipeline/stage_03_model_training.py
-      - config/config.yaml
-      - artifacts/data_ingestion/kidney-ct-scan-image
-      - artifacts/prepare_base_model
-    params:
-      - IMAGE_SIZE
-      - EPOCHS
-      - BATCH_SIZE
-      - AUGMENTATION
+      - src/data/pipeline/stage_03_data_transformation.py
+      - config/data-config.yaml
+      - data/interim/finetuning_dataset.csv
     outs:
-      - artifacts/training/model.h5
+      - data/processed/train_dataset.csv
+      - data/processed/eval_dataset.csv
+      - data/processed/test_dataset.csv
 
-
-  evaluation:
-    cmd: python src/cnnClassifier/pipeline/stage_04_model_evaluation.py
+  model_training:
+    cmd: python src/models/pipeline/stage_01_model_training.py
     deps:
-      - src/cnnClassifier/pipeline/stage_04_model_evaluation.py
-      - config/config.yaml
-      - artifacts/data_ingestion/kidney-ct-scan-image
-      - artifacts/training/model.h5
-    params:
-      - IMAGE_SIZE
-      - BATCH_SIZE
-    metrics:
-    - scores.json:
-        cache: false
+      - src/models/pipeline/stage_01_model_training.py
+      - config/model-config.yaml
+      - config/model-parameters.yaml
+      - data/processed/train_dataset.csv
+      - data/processed/eval_dataset.csv
+    outs:
+      - models/

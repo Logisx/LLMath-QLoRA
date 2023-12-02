@@ -1,5 +1,6 @@
 from src.data.configuration import ConfigurationManager
 from src.data.components.data_preprocessing import DataPreprocessing
+from src.logging import logger
 
 class DataPreprocessingPipeline:
     def __init__(self):

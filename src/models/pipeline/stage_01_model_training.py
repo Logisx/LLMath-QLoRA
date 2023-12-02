@@ -1,5 +1,6 @@
 from src.models.configuration import ConfigurationManager
 from src.models.components.model_training import ModelTrainer
+from src.logging import logger
 
 class ModelTrainingPipeline:
     def __init__(self):

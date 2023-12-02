@@ -7,7 +7,7 @@ from starlette.responses import RedirectResponse
 from fastapi.responses import Response
 from src.models.predict_model import PredictionPipeline
 
-text: str = "What is 2+2?"
+query: str = "What is 2+2?"
 
 app = FastAPI()
 
@@ -21,7 +21,8 @@ async def index():
 async def training():
     try:
         os.system("python main.py")
-        return Response("Training successful !!")
+        # os.system("dvc repro")
+        return Response("Training done successfully!")
 
     except Exception as e:
         return Response(f"Error Occurred! {e}")
@@ -30,12 +31,12 @@ async def training():
 
 
 @app.post("/predict")
-async def predict_route(text):
+async def predict_route(query):
     try:
 
         obj = PredictionPipeline()
-        text = obj.predict(text)
-        return text
+        response = obj.predict(query)
+        return response
     except Exception as e:
         raise e
     

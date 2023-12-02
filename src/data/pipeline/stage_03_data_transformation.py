@@ -1,5 +1,6 @@
 from src.data.configuration import ConfigurationManager
 from src.data.components.data_transformation import DataTransformation
+from src.logging import logger
 
 class DataTransformationPipeline:
     def __init__(self):

@@ -1,5 +1,6 @@
 from src.data.configuration import ConfigurationManager
 from src.data.components.data_ingestion import DataIngestion
+from src.logging import logger
 
 class DataIngestionPipeline:
     def __init__(self):

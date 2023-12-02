@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from src.logging import logger
 
-from src.models.pipeline.stage_model_prediction import ModelPredictionPipeline
+from src.models.pipeline.prediction import ModelPredictionPipeline
 from src.models.configuration import ConfigurationManager
 
 
