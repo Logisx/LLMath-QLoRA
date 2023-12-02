@@ -7,6 +7,12 @@ from starlette.responses import RedirectResponse
 from fastapi.responses import Response
 from src.models.predict_model import PredictionPipeline
 
+from dotenv import load_dotenv, find_dotenv
+
+_ = load_dotenv(find_dotenv()) # read local .env file
+HOST = os.environ['HOST']
+PORT = os.environ['PORT']
+
 query: str = "What is 2+2?"
 
 app = FastAPI()
@@ -41,4 +47,4 @@ async def predict_route(query):
     
 
 if __name__=="__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8080)
+    uvicorn.run(app, host=HOST, port=int(PORT))
