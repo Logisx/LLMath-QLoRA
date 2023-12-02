@@ -1,7 +1,9 @@
 import torch
 from transformers import pipeline, AutoTokenizer, LlamaForCausalLM, BitsAndBytesConfig
 from peft import PeftModel
-
+from src.models.entity import (ModelPredictionConfig,
+                                ModelPredictionParameters,
+                                BitsAndBytesParameters)
 from src.logging import logger
 
 class ModelPrediction:

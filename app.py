@@ -33,7 +33,6 @@ async def training():
 @app.post("/predict")
 async def predict_route(query):
     try:
-
         obj = PredictionPipeline()
         response = obj.predict(query)
         return response
@@ -42,4 +41,4 @@ async def predict_route(query):
     
 
 if __name__=="__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8080)
+    uvicorn.run(app, host="127.0.0.1", port=8080)
