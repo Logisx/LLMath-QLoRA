@@ -14,7 +14,7 @@
 - [📚 References \& Citations](#-references--citations)
 # :rocket: LLM Instruction tuning for school math questions
 
-End-to-end MLOps project for LLM instruction finetuning based on PEFT & QLoRA to optimize the training.
+End-to-end MLOps LLM instruction finetuning based on PEFT & QLoRA to solve math problems.
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.1.1-purple)
