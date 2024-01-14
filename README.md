@@ -1,8 +1,8 @@
 ![Logo](https://github.com/Logisx/LLMath-QLoRA/blob/main/assets/logo-color-cropped.png?raw=true)
 
-# :page_facing_up: Table of Contents 
+# 📋 Table of Contents 
 
-- [:page\_facing\_up: Table of Contents](#page_facing_up-table-of-contents)
+- [📋 Table of Contents](#page_facing_up-table-of-contents)
 - [:rocket: LLM Instruction tuning for school math questions](#rocket-llm-instruction-tuning-for-school-math-questions)
   - [:bar\_chart: Model \& Dataset](#bar_chart-model--dataset)
   - [:toolbox: Tech Stack](#toolbox-tech-stack)
