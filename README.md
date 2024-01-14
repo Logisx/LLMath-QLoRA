@@ -148,8 +148,7 @@ Project structure template can be found [here](https://drivendata.github.io/cook
 
 
 # ⚖️ License
-
-[MIT](https://github.com/Logisx/LLMath-QLoRA/blob/main/LICENSE)
+[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/Logisx/LLMath-QLoRA/blob/main/LICENSE)
 
 
 # 🔗 Links
